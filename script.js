@@ -13,7 +13,9 @@ const dots = Array.from(dotsNav.children);
 // console.log('slideSize=', slideSize);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-// arrange the slides next to one another
+// ###############################################
+// ## arrange the slides next to one another
+// ###############################################
 /*
         // slides[0].style.left = slideWidth * 0 + 'px';
         // slides[1].style.left = slideWidth * 1 + 'px';
@@ -27,9 +29,27 @@ const setSlidePosition = (slide, index) => {
 };
 slides.forEach(setSlidePosition);
 
-// When I click left, move slides to the left
-// When I click right, move slides to the right
-nextButton.addEventListener('click', (e) => {
+const moveToSlide = (track, currentSlide, targetSlide) => {
+  // use targetSlide instead of nextSlide so this can be use for nextSlide, prevSlide and click on parcific dots carousel__indicator
+  track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+  currentSlide.classList.remove('current-slide');
+  targetSlide.classList.add('current-slide');
+};
+
+// ###############################################
+// ## When I click left, move slides to the left
+// ###############################################
+prevButton.addEventListener('click', (e) => {
+  const currentSlide = track.querySelector('.current-slide');
+  const prevSlide = currentSlide.previousElementSibling;
+
+  moveToSlide(track, currentSlide, prevSlide);
+});
+
+// ###############################################
+// ## When I click right, move slides to the right
+// ###############################################
+/*nextButton.addEventListener('click', (e) => {
   const currentSlide = track.querySelector('.current-slide');
   // console.log('currentSlide=', currentSlide); // <li class="carousel__slide current-slide" style="left: 0px;">
   // console.log('currentSlide=', currentSlide.nextElementSibling); // <li class="carousel__slide" style="left: 797.333px;">
@@ -43,4 +63,17 @@ nextButton.addEventListener('click', (e) => {
   nextSlide.classList.add('current-slide');
 });
 
-// When I click the nav indicators, move to that slide.
+// Refactor the whole above into the blew
+*/
+nextButton.addEventListener('click', (e) => {
+  const currentSlide = track.querySelector('.current-slide');
+  console.log('currentSlide=', currentSlide); // <li class="carousel__slide current-slide" style="left: 0px;">
+  console.log('currentSlide=', currentSlide.nextElementSibling); // <li class="carousel__slide" style="left: 797.333px;">
+  const nextSlide = currentSlide.nextElementSibling;
+
+  moveToSlide(track, currentSlide, nextSlide);
+});
+
+// ##########################################################
+// ## When I click the nav indicators, move to that slide.
+// ##########################################################
