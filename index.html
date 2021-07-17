@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <script src="https://kit.fontawesome.com/d8de2d9986.js"></script>
+  <script src="https://kit.fontawesome.com/fca1384425.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Vanilla JS Carousel</title>
+</head>
+<body>
+  <div class='carousel'>
+    <button class='carousel__button carousel__button--left'>
+      <img src='img/left.svg' alt=''>
+<!--      <i className='fas fa-chevron-left'></i>-->
+    </button>
+
+    <div class='carousel__track-container'>
+      <ul class='carousel__track'>
+        <li class='carousel__slide'>
+          <img class="carousel__image" src="img/1.jpeg" alt="">
+        </li>
+        <li class='carousel__slide'>
+          <img class="carousel__image" src="img/2.jpeg" alt="">
+        </li>
+        <li class='carousel__slide'>
+          <img class="carousel__image" src="img/3.jpeg" alt="">
+        </li>
+      </ul>
+    </div>
+
+    <button class='carousel__button carousel__button--right'>
+      <img src='img/right.svg' alt=''>
+<!--      <i className='fas fa-chevron-right'></i>-->
+    </button>
+
+    <div class='carousel__nav'>
+      <button class='carousel__indicator current-slide'></button>
+      <button class='carousel__indicator'></button>
+      <button class='carousel__indicator'></button>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/d8de2d9986.js"></script>
+
+</body>
+</html>
