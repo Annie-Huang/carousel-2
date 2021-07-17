@@ -5,5 +5,8 @@ https://github.com/Annie-Huang/carousel-2
 
 ===================================================================================
 
-
+<< Pure javascript one. Once get to the end, the right button disappear, at the beginning, the left carousel disappear.
+   Good core concept on how to do it, you may just change to use to react to implement the same logic. But need to investigate whether refresh the page will keep the slide land on first slide or current slide...
+   Very smart logic to overflow:hidden the container so can only view 80% of the page. And move left and right of the image track.
+   Contain the bottom dots.
 

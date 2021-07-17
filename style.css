@@ -13,12 +13,20 @@
 
 .carousel__track-container {
   background: limegreen;
+  border: 4px solid red;
   /*padding: 10px;*/
-  height: 100%; /* make it the height of the container */
+  height: 100%; /* make it the height of the .carousel. But container is only 80% width */
   position: relative;
+
+  /* !!!! This is the location to hide all the left and right images
+          The overflow has to be done in the first level that overflows. If you do it in carousel__track, it won't work.
+          Because .carousel__track already stretch the .carousel__track-container since .carousel__track-container does not have a limit width
+  */
+  overflow: hidden;
 }
 
 .carousel__track {
+  border: 10px solid purple;
   padding: 0;
   margin: 0;
   list-style: none;
