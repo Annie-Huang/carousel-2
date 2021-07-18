@@ -49,6 +49,10 @@ prevButton.addEventListener('click', (e) => {
   const prevSlide = currentSlide.previousElementSibling;
 
   moveToSlide(track, currentSlide, prevSlide);
+
+  const currentDot = dotsNav.querySelector('.current-slide');
+  const prevDot = currentDot.previousElementSibling;
+  updateDots(currentDot, prevDot);
 });
 
 // ###############################################
@@ -77,6 +81,10 @@ nextButton.addEventListener('click', (e) => {
   const nextSlide = currentSlide.nextElementSibling;
 
   moveToSlide(track, currentSlide, nextSlide);
+
+  const currentDot = dotsNav.querySelector('.current-slide');
+  const nextDot = currentDot.nextElementSibling;
+  updateDots(currentDot, nextDot);
 });
 
 // ##########################################################
