@@ -3,6 +3,7 @@ https://www.youtube.com/watch?v=VYsVOamdB0g&t=148s
 
 https://github.com/Annie-Huang/carousel-2
 
+https://learnjavascript.today/
 ===================================================================================
 
 << Pure javascript one. Once get to the end, the right button disappear, at the beginning, the left carousel disappear.
