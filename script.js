@@ -36,6 +36,11 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
   targetSlide.classList.add('current-slide');
 };
 
+const updateDots = (currentDot, targetDot) => {
+  currentDot.classList.remove('current-slide');
+  targetDot.classList.add('current-slide');
+};
+
 // ###############################################
 // ## When I click left, move slides to the left
 // ###############################################
@@ -77,3 +82,25 @@ nextButton.addEventListener('click', (e) => {
 // ##########################################################
 // ## When I click the nav indicators, move to that slide.
 // ##########################################################
+dotsNav.addEventListener('click', (e) => {
+  // What indicator was clicked on?
+  const targetDot = e.target.closest('button');
+  // console.log(e);
+  // console.log(e.target);
+  // // It will only return something (e.g. <button class='carousel__indicator'></button>) if you click on the button. If you clicks on .carousel__nav that is outside of the button, it will return null;
+  // console.log(targetDot);
+
+  if (!targetDot) return;
+
+  const currentSlide = track.querySelector('.current-slide');
+  const currentDot = dotsNav.querySelector('.current-slide');
+
+  const targetIndex = dots.findIndex((dot) => dot === targetDot);
+  console.log(dots);
+  console.log(targetIndex);
+
+  const targetSlide = slides[targetIndex];
+  moveToSlide(track, currentSlide, targetSlide);
+
+  updateDots(currentDot, targetDot);
+});
